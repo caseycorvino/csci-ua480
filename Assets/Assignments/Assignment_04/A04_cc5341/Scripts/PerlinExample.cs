@@ -19,7 +19,7 @@ namespace A04_cc5341
             {
 
                 float perlin = Mathf.PerlinNoise(i * scale, 20f * scale) * 10;
-                print(perlin);
+               
                 GameObject newWall = Instantiate(wall);
                 newWall.transform.position = new Vector3(i, 0, 10);
                 newWall.transform.localScale = new Vector3(1,perlin, 1);
@@ -29,7 +29,7 @@ namespace A04_cc5341
             {
 
                 float perlin = Mathf.PerlinNoise(i * scale, 20f * scale) * 10;
-                print(perlin);
+               
                 GameObject newWall = Instantiate(wall);
                 newWall.transform.position = new Vector3(10, 0, i);
                 newWall.transform.localScale = new Vector3(1, perlin, 1);
@@ -39,7 +39,7 @@ namespace A04_cc5341
             {
 
                 float perlin = Mathf.PerlinNoise(i * scale, 20f * scale) * 10;
-                print(perlin);
+               
                 GameObject newWall = Instantiate(wall);
                 newWall.transform.position = new Vector3(-10, 0, i);
                 newWall.transform.localScale = new Vector3(1, perlin, 1);
@@ -49,7 +49,7 @@ namespace A04_cc5341
             {
 
                 float perlin = Mathf.PerlinNoise(i * scale, 20f * scale) * 10;
-                print(perlin);
+
                 GameObject newWall = Instantiate(wall);
                 newWall.transform.position = new Vector3(i, 0, -10);
                 newWall.transform.localScale = new Vector3(1, perlin, 1);
