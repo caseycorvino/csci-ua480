@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+
+/*This script is attached to the plane*/
 namespace A04_cc5341
 {
     [RequireComponent(typeof(Collider))]

@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
+/*This script is attached to the player*/
+/*Added a head bob for realistic walking*/
 namespace A04_cc5341
 {
     public class move_player_with_acceleration : MonoBehaviour
