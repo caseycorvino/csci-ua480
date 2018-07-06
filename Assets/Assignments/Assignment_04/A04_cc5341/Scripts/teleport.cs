@@ -21,11 +21,13 @@ namespace A04_cc5341
             float c = eventData.pointerPressRaycast.distance;//raycast to hit
             float a = 1; // height of player
             float b = Mathf.Sqrt(Mathf.Pow(c, 2) - a);//distace forward to hit from floor
+            if (b <= 10)
+            {
+                Vector3 forward = Camera.main.transform.forward;
+                forward.y = 0;
 
-            Vector3 forward = Camera.main.transform.forward;
-            forward.y = 0;
-
-            GameObject.Find("Player").transform.position += forward * b;//need to change
+                GameObject.Find("Player").transform.position += forward * b;//need to change
+            }
         }
 
 
