@@ -5,6 +5,8 @@ public class PlayerController : NetworkBehaviour
 {
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
+    private float last_click = 0;
+    public float double_click_interval = 0.2f;
 
     void Update()
     {
@@ -21,9 +23,18 @@ public class PlayerController : NetworkBehaviour
         //Change to key press, only forward movement
         if (Input.GetMouseButton(0))
         {
-            Vector3 forward = transform.forward;
-            forward.y = 0;
-            transform.position += forward * Time.deltaTime;
+            //last_click = Time.time;
+            if (Time.time - last_click <= double_click_interval && Time.time - last_click > 0.1f)
+            {
+                CmdFire();
+            }
+            else
+            {
+                Vector3 forward = transform.forward;
+                forward.y = 0;
+                transform.position += forward * Time.deltaTime;
+            }
+            last_click = Time.time;
         }
     }
 
