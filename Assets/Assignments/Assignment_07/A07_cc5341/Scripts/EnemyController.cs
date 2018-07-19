@@ -9,6 +9,9 @@ public class EnemyController : NetworkBehaviour {
     private float interval = 1f;
     private float timeToRotate = 0.0f;
 
+    public float shoot_interval = 0.5f;
+    private float timeToShoot = 0.0f;
+
     public float walk_range = 5f;
 
     // Use this for initialization
@@ -32,7 +35,16 @@ public class EnemyController : NetworkBehaviour {
             }
         }
         transform.position += forward * Time.deltaTime;
+
+        if (Time.time > timeToShoot)
+        {
+            timeToShoot += shoot_interval;
+            CmdFire();
+        }
+
 	}
+
+    [Command]
     void CmdFire()
     {
         // Create the Bullet from the Bullet Prefab

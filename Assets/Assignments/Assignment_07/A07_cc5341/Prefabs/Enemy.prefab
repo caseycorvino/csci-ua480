@@ -489,8 +489,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d63319dd98d1487c8b3fe3bdd2bd6cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
-  bulletSpawn: {fileID: 0}
+  bulletPrefab: {fileID: 1483082372118376, guid: a031bcc82e49b45b3a5faa4f7eb63d0c,
+    type: 2}
+  bulletSpawn: {fileID: 4836323828899798}
+  shoot_interval: 0.5
   walk_range: 10
 --- !u!114 &114208291288902876
 MonoBehaviour:
