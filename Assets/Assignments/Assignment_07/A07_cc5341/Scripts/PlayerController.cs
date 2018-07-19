@@ -12,18 +12,21 @@ public class PlayerController : NetworkBehaviour
         {
             return;
         }
-        //TODO: Change to key press, only forward movement
-        var x = Input.GetAxis("Horizontal") * Time.deltaTime * 150.0f;
-        var z = Input.GetAxis("Vertical") * Time.deltaTime * 3.0f;
-
-        transform.Rotate(0, x, 0);
-        transform.Translate(0, 0, z);
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        Vector3 cameraPos = new Vector3(transform.position.x, 0.5f, transform.position.z);
+        cameraPos = cameraPos + (transform.forward / 2f);
+        Camera.main.transform.position = cameraPos;
+        Vector3 cameraRot = Camera.main.transform.eulerAngles;
+        cameraRot.x = 0;
+        transform.eulerAngles = cameraRot;
+        //Change to key press, only forward movement
+        if (Input.GetMouseButton(0))
         {
-            CmdFire();
+            Vector3 forward = transform.forward;
+            forward.y = 0;
+            transform.position += forward * Time.deltaTime;
         }
     }
+
     [Command]
     void CmdFire()
     {
