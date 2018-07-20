@@ -14,6 +14,7 @@ public class PlayerController : NetworkBehaviour
         {
             return;
         }
+
         Vector3 cameraPos = new Vector3(transform.position.x, 0.5f, transform.position.z);
         cameraPos = cameraPos + (transform.forward / 2f);
         Camera.main.transform.position = cameraPos;
