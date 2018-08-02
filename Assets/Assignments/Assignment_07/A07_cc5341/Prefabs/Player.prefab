@@ -360,6 +360,9 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1483082372118376, guid: a031bcc82e49b45b3a5faa4f7eb63d0c,
     type: 2}
   bulletSpawn: {fileID: 4601402558117078}
+  double_click_interval: 0.2
+  camController: {fileID: 1129826698339584, guid: 6d7545a55493d42548fe56952cac82e6,
+    type: 2}
 --- !u!114 &114203047049603146
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -373,6 +376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 100
   healthBar: {fileID: 224424032819951202}
+  destroyOnDeath: 0
 --- !u!114 &114345365749622552
 MonoBehaviour:
   m_ObjectHideFlags: 1

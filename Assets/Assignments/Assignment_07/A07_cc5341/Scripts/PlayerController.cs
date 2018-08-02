@@ -7,6 +7,7 @@ public class PlayerController : NetworkBehaviour
     public Transform bulletSpawn;
     private float last_click = 0;
     public float double_click_interval = 0.2f;
+    private GameObject camController = GameObject.Find("camera controller");
 
     void Update()
     {
@@ -17,7 +18,7 @@ public class PlayerController : NetworkBehaviour
 
         Vector3 cameraPos = new Vector3(transform.position.x, 0.5f, transform.position.z);
         cameraPos = cameraPos + (transform.forward / 2f);
-        Camera.main.transform.position = cameraPos;
+        camController.transform.position = cameraPos;
         Vector3 cameraRot = Camera.main.transform.eulerAngles;
         cameraRot.x = 0;
         transform.eulerAngles = cameraRot;
