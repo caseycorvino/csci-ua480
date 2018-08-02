@@ -7,7 +7,13 @@ public class PlayerController : NetworkBehaviour
     public Transform bulletSpawn;
     private float last_click = 0;
     public float double_click_interval = 0.2f;
-    private GameObject camController = GameObject.Find("camera controller");
+    private GameObject camController;
+
+    private void Start()
+    {
+        camController = GameObject.Find("camera_controller");
+
+    }
 
     void Update()
     {
@@ -20,7 +26,7 @@ public class PlayerController : NetworkBehaviour
         cameraPos = cameraPos + (transform.forward / 2f);
         camController.transform.position = cameraPos;
         Vector3 cameraRot = Camera.main.transform.eulerAngles;
-        cameraRot.x = 0;
+        cameraRot.x = 0; 
         transform.eulerAngles = cameraRot;
         //Change to key press, only forward movement
         if (Input.GetMouseButton(0))
